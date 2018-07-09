@@ -1,0 +1,80 @@
+.topCell,.bottomCell,.leftCell,.rightCell{
+	height: 150px;
+	width: 150px;
+	border-style: solid;
+	border-width: 1px;
+}
+td{
+	position: relative;
+}
+.item{
+	width: 150px;
+	position: absolute;
+	bottom: 2px;
+	text-align: center;
+}
+.controlCenterLeft{
+	height: 200px;
+	width: 250px;
+	border-style: solid;
+	border-width: 1px;
+	z-index: 2;
+	position: absolute;
+	top: 250px;
+	left:250px;
+
+}
+.controlCenterRight{
+	height: 200px;
+	width: 250px;
+	border-style: solid;
+	border-width: 1px;
+	z-index: 2;
+	position: absolute;
+	top: 250px;
+	left:550px;
+
+}
+.controlCenterRight input{
+	padding: 10px;
+	position: absolute;
+	color: white;
+	background-color: red;
+	bottom: 5px;
+	right:5px;
+}
+.controlCenterLeft input{
+	padding: 10px;
+	position: absolute;
+	color:white;
+	background-color: blue;
+	bottom: 5px;
+	right:5px;
+}
+iframe.hidden{ display:none }
+
+.Ben_scoreBoard{
+	text-align: left;
+	height: 200px;
+	width: 250px;
+	border-style: solid;
+	border-width: 1px;
+	z-index: 2;
+	position: absolute;
+	top: 550px;
+	left:250px;
+}
+.Joe_scoreBoard{
+	text-align: left;
+	height: 200px;
+	width: 250px;
+	border-style: solid;
+	border-width: 1px;
+	z-index: 2;
+	position: absolute;
+	top: 550px;
+	left:550px;
+}
+
+
+
