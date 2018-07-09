@@ -3,7 +3,8 @@ include 'function.php';
 
 
 session_start();
-//session_unset(); 
+
+
 
 
 echo "Game Page";
@@ -61,84 +62,95 @@ $others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
                     <img src="start.jpg" alt="" style="width:200px; height:auto;">
                 </td>
                 <td class="topCell" name="2">
-               	<?php 
-
-               		if($two==true){
-               			echo "<div style='height:100px; width:100px;' class='something'>";
-               		}
-               	?>
+            <img src="chance.png" alt="" style="width:200px; height:auto;">
                     <div class="item">Chance</div>
                 </td>
                 <td class="topCell" name="3">
-                	<div class="<?=$myHeaderClass?>" style="height: 100px;width:100px"></div>
+                	<img src="peachtree.jpg" alt="" style="width:200px; height:auto;">
+
                 	<div class="<?=$myHeaderClass?>"></div>
                     <div class="item">Peachtree St</div>
                 </td>
                 <td class="topCell" name="4">
-                	<div class="<?=$myHeaderClass?>" style="height: 100px;width:100px"></div>
+                	<img src="railroad.png" alt="" style="width:200px; height:200px;">
                     <div class="item">Rail Road</div>
                 </td>
                 <td class="topCell" name="5">
-                	<div class="<?=$myHeaderClass?>" style="height: 100px;width:100px"></div>
+                <img src="henderson.jpg" alt="" style="width:200px; height:auto;">
                     <div class="item">Henderson Rd</div>
                 </td>
                 <td class="topCell" name="6">
+                	<img src="go_jail.jpg" alt="" style="width:200px; height:auto;">
                     <div class="item">Go to Jail</div>
                 </td>
             </tr>
             <tr>
                 <td class="rightCell" name="7">
+                	<img src="five_fork.jpg" alt="" style="width:200px; height:auto;">
                     <div class="item">Five Fork</div>
                 </td>
                 <td colspan="4" class="CenterCell"></td>
                 <td class="leftCell" name="20">
+                	<img src="bill.png" alt="" style="width:200px; height:auto;">
                     <div class="item">Eletrical Bill</div>
                 </td>
             </tr>
             <tr>
                 <td class="rightCell" name="8">
+                	<img src="chest.jpg" alt="" style="width:200px; height:auto;">
                     <div class="item">Chest</div>
                 </td>
                 <td colspan="4" class="CenterCell"></td>
                 <td class="leftCell" name="19">
+                	<img src="ponce.png" alt="" style="width:200px; height:auto;">
                     <div class="item">Ponce City Market</div>
                 </td>
             </tr>
             <tr>
                 <td class="rightCell" name="9">
+                	<img src="water.png" alt="" style="width:200px; height:auto;">
                     <div class="item">Water Utility</div>
                 </td>
                 <td colspan="4" class="CenterCell"></td>
                 <td class="leftCell" name="18">
+                	<img src="railroad.png" alt="" style="width:200px; height:200px;">
                     <div class="item">Rail Road</div>
                 </td>
             </tr>
             <tr>
                 <td class="rightCell" name="10">
+                	<img src="parkview.jpg" alt="" style="width:200px; height:auto;">
                     <div class="item">Parkview Walk</div>
                 </td>
                 <td colspan="4" class="CenterCell"></td>
                 <td class="leftCell" name="17">
+                	<img src="stone_mountain.png" alt="" style="width:200px; height:auto;">
                     <div class="item">Stone Mountain</div>
                 </td>
             </tr>
             <tr>
                 <td class="bottomCell" name="16">
                     <div class="item">Jail</div>
+                    <img src="jail.jpg" alt="" style="width:200px; height:auto;">
                 </td>
                 <td class="bottomCell" name="15">
+                	<img src="railroad.png" alt="" style="width:200px; height:200px;">
                     <div class="item">Raid Road</div>
                 </td>
                 <td class="bottomCell" name="14">
+                	<img src="tax.jpg" alt="" style="width:200px; height:auto;">
                     <div class="item">Tax</div>
                 </td>
                 <td class="bottomCell" name="13">
+                	<img src="ashwood.jpg" alt="" style="width:200px; height:auto;">
                     <div class="item">Ashwood St</div>
                 </td>
                 <td class="bottomCell" name="12">
+                	<img src="jimmy.png" alt="" style="width:200px; height:auto;">
                     <div class="item">Jimmy Carter</div>
                 </td>
                 <td class="bottomCell" name="11">
+                	<img src="parking.png" alt="" style="width:200px; height:auto;">
                     <div class="item">Free Parking</div>
                 </td>
             </tr>
