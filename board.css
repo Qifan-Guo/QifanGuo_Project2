@@ -51,6 +51,14 @@ td{
 	bottom: 5px;
 	right:5px;
 }
+#Ben_buy,#Joe_buy{
+	padding: 10px;
+	position: absolute;
+	color:white;
+	background-color: green;
+	bottom: 5px;
+	right:50px;
+}
 iframe.hidden{ display:none }
 
 .Ben_scoreBoard{
@@ -63,6 +71,7 @@ iframe.hidden{ display:none }
 	position: absolute;
 	top: 550px;
 	left:250px;
+	overflow: auto
 }
 .Joe_scoreBoard{
 	text-align: left;
@@ -74,7 +83,31 @@ iframe.hidden{ display:none }
 	position: absolute;
 	top: 550px;
 	left:550px;
+	overflow: auto
 }
+.Ben_Cash{
+	text-align: center;
+	height: 50px;
+	width: 200px;
+	border-style: solid;
+	border-width: 1px;
+	z-index: 2;
+	position: absolute;
+	top: 480px;
+	left:280px;
 
+}
+.Joe_Cash{
+text-align: center;
+	height: 50px;
+	width: 200px;
+	border-style: solid;
+	border-width: 1px;
+	z-index: 2;
+	position: absolute;
+	top: 480px;
+	left:580px;
+
+}
 
 
