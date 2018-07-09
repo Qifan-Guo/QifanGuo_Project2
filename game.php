@@ -31,7 +31,7 @@ $Property_Buy=array("Peachtree"=>"220","Raid Road 1"=>"200","Henderson Rd"=>"160
 		"Ashwood St"=>"150","Rail Road 3"=>"200","Parkview Walk"=>"300",
 		"Five Fork"=>"280");
 
-$others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
+$others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail","Water Utility");
 
 
 
@@ -59,7 +59,7 @@ $others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
                 	
                 	<div class="ownership"></div>
                     <div class="item">Start</div>
-                    <img src="start.jpg" alt="" style="width:200px; height:auto;">
+                    <img src="start.png" alt="" style="width:200px; height:auto;">
                 </td>
                 <td class="topCell" name="2">
             <img src="chance.png" alt="" style="width:200px; height:auto;">
@@ -169,6 +169,7 @@ $others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
 				$_SESSION['Ben_Position']+=$move1;
 				if($_SESSION['Ben_Position']>20){
 					$_SESSION['Ben_Position']-=20;
+					$_SESSION['Ben_Cash']+=200;
 				}
 				//Property means anycell that we land on
 				$Property=$Board_Cell[$_SESSION['Ben_Position']-1];
@@ -200,6 +201,12 @@ $others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
 								case 'Eletrical Bill':
 									$_SESSION['Ben_Cash_minus']+=75;
 									echo "<br>Pay 75 in Eletrical Bill";
+									break;
+								case 'Water Utility':
+									$_SESSION['Ben_Cash_minus']+=75;
+									echo "<br>Pay 75 in Water Bill";
+									
+
 								
 								default:
 									# code...
@@ -275,10 +282,46 @@ $others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
 				$_SESSION['Joe_Position']+=$move2;
 					if($_SESSION['Joe_Position']>20){
 					$_SESSION['Joe_Position']-=20;
+					$_SESSION['Joe_Cash']+=200;
 		
 				}
 				$jProperty=$Board_Cell[$_SESSION['Joe_Position']-1];
 				echo "You have landed in ".$Board_Cell[$_SESSION['Joe_Position']-1]."<br>Position:".$_SESSION['Joe_Position'];
+
+				if(in_array($jProperty, $others)) {
+
+							switch ($jProperty) {
+								case 'Chance':
+									echo "<br>Do 10 Push Up";
+									break;
+								case 'Go to Jail':
+									echo "<br>Suspend for two rounds";
+									break;
+								case 'Jail':
+									echo "<br>Just visiting";
+									break;
+								case 'Chest':
+									$_SESSION['Joe_Cash_plus']+=100;
+									echo "<br>Found 100 Dollars In the Bathroom!";
+									break;
+								case 'Tax':
+									$_SESSION['Joe_Cash_minus']+=200;
+									echo "<br>Pay 200 Dollar in Tax";
+									break;
+								case 'Eletrical Bill':
+									$_SESSION['Joe_Cash_minus']+=75;
+									echo "<br>Pay 75 in Eletrical Bill";
+									break;
+								case 'Water Utility':
+								$_SESSION['Joe_Cash_minus']+=75;
+								echo "<br>Pay 75 in Water Bill";
+								break;
+								
+								default:
+									# code...
+									break;
+							}
+						}
 				
 				if(in_array($jProperty, $Properties_all)){
 					
@@ -364,6 +407,10 @@ $others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
 					$_SESSION['Ben_Cash']=1500-$_SESSION['Ben_Cash_minus']+$_SESSION['Ben_Cash_plus'];
 					
 					$_SESSION['Joe_Cash']=1500-$_SESSION['Joe_Cash_minus']+$_SESSION['Joe_Cash_plus'];
+
+					if($_SESSION['Ben_Cash']<0){
+						echo "<h1>GAME OVER Ben Lost!<h1>";
+					}
 			
 
 				echo "<h3>Money :".$_SESSION['Ben_Cash']."</h3>";
@@ -378,11 +425,20 @@ $others=array("Chance","Go to Jail","Eletrical Bill","Tax","Chest","Jail");
 			<?php 
 				
 				echo "<h3>Money :".$_SESSION['Joe_Cash']."</h3>";
+				if (isset($_POST['reset'])) {
+					 session_unset();
+				}
+				if($_SESSION['Joe_Cash']<0){
+						echo "<h1>GAME OVER Joe Lost!<h1>";
+					}
 
 
 			?>
 
 		</div>
+		<form  method="POST" accept-charset="utf-8">
+			<input type="submit" name="reset" id="Reset Game" value="Reset">
+		</form>
 
 
 

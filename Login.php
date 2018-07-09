@@ -23,7 +23,7 @@ if($USER_NAME==$user_name){
 	if($USER_PASSWORD==$password){
 		echo"<h1> Welcome to the Page $user_name! <br>";
 		echo "<h2> Click Start to Start the Game!<h2>";
-		echo '<form action="game.php"> <input type="submit" value="Start" name="submit" id="secondButton">';
+		echo '<form action="game.php"> <input type="submit" value="Start" name="gameStart" id="secondButton">';
 
 	}else{
 		echo "Wrong Password";
